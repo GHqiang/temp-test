@@ -6,3 +6,82 @@ $--body-min-width: 600px;
 $--default-font: 'Microsoft YaHei', '微软雅黑', 'SimSun', '宋体';
 $--default-font-size: 14px;
 $font-size2: 16px;
+
+@function px($px) {
+	@return $px * 1px;
+}
+// 颜色
+$color-primary: #409EFF;
+$color-success: #67C23A;
+$color-warning: #E6A23C;
+$color-danger: #F56C6C;
+$color-white: white;
+$color-black: black;
+$color-gray-dark: #333;
+$color-gray-middle: #666;
+$color-gray-light: #999;
+$colors: (
+	primary: $color-primary,
+	success: $color-success,
+	warning: $color-warning,
+	danger: $color-danger,
+	white: $color-white,
+	black: $color-black,
+	gray-dark: $color-gray-dark,
+	gray-middle: $color-gray-middle,
+	gray-light: $color-gray-light
+);
+//字体大小
+$font-mini: px(12);
+$font-base: px(14);
+$font-small: px(16);
+$font-large: px(18);
+$fonts: (
+	mini: $font-mini,
+	small: $font-small,
+	base: $font-base,
+	large: $font-large
+);
+//border
+$border-width: px(1);
+$border-color: #e8e8e8;
+// border-radius
+$radius-base: px(4);
+$radius-circle: 50%;
+$radius: (
+	base: $radius-base,
+	circle: $radius-circle
+);
+//定位
+$positions: (
+	absolute: absolute,
+	relative: relative,
+	fixed: fixed
+);
+//文字对齐
+$textAligns: (
+	left: left,
+	center: center,
+	right: right
+);
+//浮动
+$floats: (
+	left: left,
+	right: right
+);
+//间距
+$size-zero: 0;
+$size-mini: px(10);
+$size-small: px(20);
+$size-base: px(24);
+$size-large: px(28);
+$sizes: (
+	zero: $size-zero,
+	mini: $size-mini,
+	small: $size-small,
+	base: $size-base,
+	large: $size-large
+);
+//按钮颜色
+$btn-color-warning: #E6A23C;
+$btn-color-success: #67C23A;
