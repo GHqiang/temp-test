@@ -7,8 +7,10 @@
                     <hzwq-search-panel ref="searchPanel" :column="3" :form="form" :form-config="formConfig" :select-option="selectOption" fold hide-fold label-width="100px" @submit="search" @reset="">
                         <template #bottom-button="{ reset, submit }">
                             <hzwq-button round class="reset-btn btn" @click="reset">重置</hzwq-button>
-                            <hzwq-button round class="search-btn btn" @click="submit">查询</hzwq-button>
-                            <hzwq-button slot="fold" class="flod-btn btn" :icon="isFold ? 'el-icon-arrow-down' : 'el-icon-arrow-up'" @click="isFold = !isFold;$refs.searchPanel.changeFold(isFold)">{{ isFold ? '展 开' : '折 叠' }}</hzwq-button>
+                            <hzwq-button round type="primary" class="search-btn btn" @click="submit">查询</hzwq-button>
+                            <hzwq-button slot="fold" class="flod-btn btn" type="text" @click="isFold = !isFold;$refs.searchPanel.changeFold(isFold)">{{ isFold ? '展 开' : '折 叠' }}
+                                <i :class="isFold ? 'el-icon-arrow-down' : 'el-icon-arrow-up'"></i>
+                            </hzwq-button>
                         </template>
                     </hzwq-search-panel>
                 </div>
@@ -40,9 +42,9 @@
                             <template v-for="column in tableHead">
                                 <el-table-column v-if="column.prop == 'name'" :key="column.prop" fixed="left" :prop="column.prop" :label="column.label" :min-width="column.width" align="center">
                                     <template slot-scope="scope">
-                                        <span class="text-success cursor-pointer">{{
-                  scope.row.name
-                }}</span>
+                                        <span class="text-success cursor-pointer">
+                                            {{ scope.row.name }}
+                                        </span>
                                     </template>
                                 </el-table-column>
                                 <el-table-column v-else :key="column.prop +'1'" :prop="column.prop" :label="column.label" :min-width="column.width" show-overflow-tooltip align="center">
@@ -149,7 +151,10 @@ export default window.data = {
                 this.tableData = []
                 this.pageConfig.total = 0
             } finally {
-                this.tableLoading = false
+                setTimeout(() => {
+
+                    this.tableLoading = false
+                }, 1000);
             }
         },
         // 点击搜索

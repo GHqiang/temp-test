@@ -4,7 +4,7 @@
         <hzwq-search-panel :column="4" :form="form" :form-config="formConfig" :select-option="selectOption" label-width="100px" @submit="onSearch" @reset="onReset">
             <template #bottom-button="{ reset, submit }">
                 <hzwq-button round class="reset-btn btn" @click="reset">重置</hzwq-button>
-                <hzwq-button round class="search-btn btn" @click="submit">查询</hzwq-button>
+                <hzwq-button round class="search-btn btn" type="primary" @click="submit">查询</hzwq-button>
             </template>
         </hzwq-search-panel>
     </div>
@@ -18,12 +18,14 @@ export default {
     data() {
         return {
             form: {
-                unit: '1', // 单位
+                unit: '1-2', // 单位
                 username: '', // 用户名称
                 time: '' // 处理时间
             }, // 自定义查询参数
             formConfig: searchForm.JsonForm.formConfig, // 查询表单配置
-            selectOption: {}
+            selectOption: {
+                unit: []
+            }
         };
     },
     created() {
@@ -33,9 +35,8 @@ export default {
         async getBaseOrgTree() {
             try {
                 const res = await getOrgListTree()
-                this.selectOption.unit = res.DTS || [];
-                console.log(this.selectOption);
-                this.$forceUpdate();
+                this.$set(this.selectOption, 'unit', res.list || [])
+                this.onSearch()
             } catch (error) {
                 console.warn('获取机构树列表异常', error)
             }

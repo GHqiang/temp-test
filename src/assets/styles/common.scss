@@ -1,6 +1,7 @@
 /*公共样式*/
 @import './var.scss';
-.table-wrap{
+
+.table-wrap {
 	height: 500px;
 	display: flex;
 	flex: 1;
@@ -8,13 +9,15 @@
 	align-items: center;
 	overflow: hidden;
 }
+
 //分页样式重置
-.el-pagination{
+.el-pagination {
 	overflow: hidden;
-	padding:17px 20px 0 0;
+	padding: 17px 20px 0 0;
 	text-align: right;
 }
-.el-pagination .el-select .el-input{
+
+.el-pagination .el-select .el-input {
 	width: 90px;
 	text-align: center;
 	border-radius: 16px;
@@ -23,18 +26,22 @@
 	line-height: 32px;
 	background-color: #F6F6F6;
 	box-sizing: border-box;
-	>.el-input__inner{
-		width: 100px!important;
+
+	>.el-input__inner {
+		width: 100px !important;
 		height: 100%;
 		text-align: center;
 	}
-	.el-pagination .el-input__suffix{
+
+	.el-pagination .el-input__suffix {
 		right: 5px;
 	}
 }
+
 .el-pagination.is-background .btn-next,
 .el-pagination.is-background .btn-prev,
-.el-pagination.is-background .el-pager li,.el-pagination input{
+.el-pagination.is-background .el-pager li,
+.el-pagination input {
 	min-width: 44px;
 	height: 32px;
 	line-height: 32px;
@@ -42,45 +49,51 @@
 	border: none;
 	border-radius: 16px;
 }
-.el-pagination__jump{
+
+.el-pagination__jump {
 	margin-left: 0;
 }
-.el-pagination__editor.el-input{
-	width: 50px!important;
+
+.el-pagination__editor.el-input {
+	width: 50px !important;
 }
-.el-pagination__editor.el-input .el-input__inner{
-	padding-left: 0!important;
+
+.el-pagination__editor.el-input .el-input__inner {
+	padding-left: 0 !important;
 }
-//查询面板
-.flod-btn, .flod-btn:hover, .flod-btn:active, .flod-btn:focus{
-		border: none;
-		background-color: transparent;
-		color: #333;
-	}
-.search-panel{
-	.reset-btn{
-		background-color: $btn-color-warning;
-		border-color: $btn-color-warning;
-		color: $color-white;
-	}
-	.search-btn{
-		background-color: $btn-color-success;
-		border-color: $btn-color-success;
-		color: $color-white;
-	}
-	.btn{
-		min-width: 80px;
-		height: 32px;
-		border-radius: 16px;
-		font-size: 14px;
-		font-weight: 400;
-		box-sizing: border-box;
-		margin-left: 10px;
-		&:first-child{
-			margin-left: 0;
-		}
-	}
+
+.btn {
+	margin-left: 10px;
 }
+
+// .search-panel {
+// 	.reset-btn {
+// 		background-color: $btn-color-warning;
+// 		border-color: $btn-color-warning;
+// 		color: $color-white;
+// 	}
+
+// 	.search-btn {
+// 		background-color: $btn-color-success;
+// 		border-color: $btn-color-success;
+// 		color: $color-white;
+// 	}
+
+// 	.btn {
+// 		min-width: 80px;
+// 		height: 32px;
+// 		border-radius: 16px;
+// 		font-size: 14px;
+// 		font-weight: 400;
+// 		box-sizing: border-box;
+// 		margin-left: 10px;
+
+// 		&:first-child {
+// 			margin-left: 0;
+// 		}
+// 	}
+// }
+
 .box-border {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }

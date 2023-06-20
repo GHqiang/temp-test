@@ -41,12 +41,10 @@ export default {
     data() {
         return {};
     },
-    mounted() {
-        this.loadData();
-    },
     methods: {
         // 获取统计数据
         loadData(params) {
+            console.log('params===>', params)
             this.$refs.tongjiRef.init(params);
             this.$refs.profileCateRef.init(params);
             this.$refs.dataListRef.init(params);

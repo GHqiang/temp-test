@@ -9,7 +9,7 @@ const JsonForm = {
       clearable: true
     }
   }, {
-    itemType: 'select',
+    itemType: 'cascader',
     prop: 'dept',
     label: '应聘部门',
     attrs: {
@@ -75,15 +75,61 @@ const JsonForm = {
   // 表单多选参数配置
   selectOption: {
     dept: [
-      { label: '管理部', value: '01' },
-      { label: '综合部', value: '02' },
-      { label: '财务部', value: '03' },
-      { label: '审计部', value: '04' },
-      { label: '技术部', value: '05' },
-      { label: '设计部', value: '06' },
-      { label: '实施部', value: '07' },
-      { label: '测试部', value: '08' }
-
+      {
+        label: '开发部',
+        value: '1',
+        children: [
+          {
+            label: '开发一部',
+            value: '1-1'
+          },
+          {
+            label: '开发二部',
+            value: '1-2'
+          }
+        ]
+      },
+      {
+        label: '实施部',
+        value: '2',
+        children: [
+          {
+            label: '实施一部',
+            value: '2-1'
+          },
+          {
+            label: '实施二部',
+            value: '2-2'
+          },
+          {
+            label: '实施三部',
+            value: '2-3'
+          }
+        ]
+      },
+      {
+        label: '设计部',
+        value: '3',
+        disabled: true
+      },
+      {
+        label: '测试部',
+        value: '4',
+        children: [
+          {
+            label: '测试一部',
+            value: '4-1'
+          },
+          {
+            label: '测试二部',
+            value: '4-2'
+          },
+          {
+            label: '测试三部',
+            value: '4-3'
+          }
+        ]
+      }
     ],
     job: [
       { label: '前端工程师', value: '01' },
@@ -134,7 +180,7 @@ const TableHeader = [
   {
     prop: 'deptName',
     label: '应聘部门',
-    width: '100rpx'
+    width: '130rpx'
   },
   {
     prop: 'sex',
