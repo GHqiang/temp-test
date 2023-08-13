@@ -10,6 +10,7 @@ import axios from './utils/request'
 // 按需引入hzwq-ui
 import './utils/hzwqui.js'
 
+
 Vue.use(directives)
 Vue.use(ElementUI)
 Vue.prototype.$axios = axios
